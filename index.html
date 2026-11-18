@@ -35,6 +35,11 @@
     .archive-grid .report{grid-column:1/-1}
     .archive-grid .report ol,.archive-grid .report ul{margin:10px 0 0;padding-left:22px;color:#a8c9c4;font-size:14px;line-height:1.65}
     .archive-grid .report li+li{margin-top:8px}
+    .archive-grid details{border:1px solid #2e5660;padding:16px;background:#0b2a35}
+    .archive-grid summary{cursor:pointer;color:#6ebfa6;font-size:14px;font-weight:700}
+    .archive-grid summary::marker{color:#6ebfa6}
+    .archive-grid details h3{margin-top:16px}
+    .archive-grid details p+p{margin-top:10px}
     @media(max-width:1000px){.about-grid{grid-template-columns:1fr}}
     @media(max-width:1500px){.center-grid{grid-template-columns:1fr}}
     @media(max-width:650px){
@@ -143,17 +148,18 @@
   <button id="terminal-open" class="terminal-fab" type="button"><span aria-hidden="true">⌘</span> Служебный доступ</button>
 
   <dialog id="terminal-dialog" aria-labelledby="terminal-title"><div class="terminal-header"><div><span class="terminal-led"></span><strong id="terminal-title">ZYMEDBIO // SECURE ACCESS</strong></div><button id="terminal-close" type="button" aria-label="Закрыть терминал">×</button></div><div class="terminal-body"><p class="terminal-welcome">Система внутреннего доступа ZMB. Соединение установлено.<br>Введите <kbd>help</kbd>, чтобы увидеть доступные команды.</p><div id="terminal-log" class="terminal-log" role="log" aria-live="polite"></div><form id="terminal-form" autocomplete="off"><label for="terminal-input">ZMB:~$</label><input id="terminal-input" type="text" spellcheck="false" autocomplete="off" aria-label="Команда терминала" placeholder="Введите команду"><button type="submit" aria-label="Выполнить команду">↵</button></form><div id="security-warning" class="security-warning" role="alert" hidden>Зафиксирована попытка взлома, ваше местоположение устанавливается</div><div id="archive" class="archive" hidden><div class="archive-heading"><span>ВНУТРЕННИЙ АРХИВ</span><span>ДОСТУП ПОДТВЕРЖДЁН</span></div><div class="archive-grid">
-  <article class="report"><span>ОТЧЁТ / ZMB17B / 01</span><h3>ЭКСПЕРИМЕНТАЛЬНЫЙ ГРАФИК ZMB17B:</h3><ol>
-    <li>Персонал идентифицирован и направлен на участие в программе тестирования (90% положительных результатов, остальные уволены).</li>
-    <li>Персонал инокулирован формулой B138 (третичные биоциты). Успешно.</li>
-    <li>Наблюдение продолжается.</li>
-  </ol></article>
-  <article class="report"><span>ОТЧЁТ / ZMB17B / 02</span><h3>ПОДДЕРЖИВАЮЩИЕ МАТЕРИАЛЫ:</h3><ul>
-    <li>ТРЕТИЧНЫЕ БИОЦИТЫ: только в исследовательском крыле. (ПОДТВЕРЖДЕНО)</li>
-    <li>ВТОРИЧНЫЕ БИОЦИТЫ: исследовательский центр в подвале. (ПОЗИТИВНО)</li>
-    <li>ГРАФИК ПЕРВИЧНЫХ БИОЦИТОВ: график сбора молока соблюдается. Полуавтоматизация сбора - ПОЗИТИВНО, но первичные сборные установки приближаются к концу цикла - НЕОБХОДИМА ЗАМЕНА УСТАНОВОК КАК МОЖНО СКОРЕЕ</li>
-  </ul></article>
-  <article><span>ПЕРЕПИСКА / 06:42</span><h3>Тема: доступ в восточное крыло</h3><p>«Почему карточки временного персонала отмечены в системе после окончания смены? Проверьте журнал вручную и ответьте только по внутреннему каналу».</p></article><article><span>ПЕРЕПИСКА / 22:17</span><h3>Тема: повторный запрос</h3><p>«Не отправляйте сводку наружу до подписания исправленной версии. Если вопрос повторится, передайте его напрямую руководству».</p></article></div></div></div></dialog>
+  <details class="report"><summary>📁 01 / ЖУРНАЛ ИЗМЕНЕНИЙ ОТЧЁТА ДЛЯ FDA</summary><h3>Зилактис · история правок поданного отчёта</h3>
+    <p><strong>08:14 · Исходная версия отправлена в Управление по контролю качества пищевых продуктов и лекарственных средств (FDA).</strong> Заключение: «Зилактис обладает очень странными свойствами; у участников испытаний наблюдаются клеточные мутации». Отчёт принят системой.</p>
+    <p><strong>11:37 · Открыта правка уже поданного отчёта.</strong> Исходное заключение удалено из раздела «Нежелательные явления».</p>
+    <p><strong>11:42 · Подмена текста сохранена.</strong> Новая формулировка: «Необычных свойств и признаков клеточных мутаций у участников испытаний не выявлено».</p>
+    <p><strong>11:45 · История изменений скрыта из доступной регулятору версии.</strong> Локальная копия исходного заключения сохранена в этом журнале.</p>
+  </details>
+  <details class="report"><summary>📁 02 / ПРОТОКОЛ ОПЫТА НА ЛАБОРАТОРНЫХ КРЫСАХ</summary><h3>Третичный биоцит · наблюдение после введения</h3>
+    <p><strong>00:00 · Введение.</strong> Лабораторным крысам введён третичный биоцит. Начато непрерывное наблюдение.</p>
+    <p><strong>06:00 · Поведение.</strong> Подопытные стали агрессивными и начали бесконтрольно спариваться.</p>
+    <p><strong>09:00 · Морфология.</strong> Начались быстрые спонтанные мутации, уникальные для каждого подопытного.</p>
+    <p><strong>14:00 · Прекращение опыта.</strong> Подопытных уже нельзя назвать крысами. Они агрессивно пытаются разрушить клетку новыми органами. Подопытных пришлось умертвить; эксперимент завершён.</p>
+  </details></div></div></div></dialog>
 <script>
 function runTerminal(input) {
   const command = input.trim().toLowerCase();
